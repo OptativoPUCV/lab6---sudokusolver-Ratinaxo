@@ -68,3 +68,16 @@ sudoku.c:148:24: error: void value not ignored as it ought to be
       |                        ^
 Compilation failed
 4e9509a
+Sun 07 May 2023 04:35:48 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:138:22: error: invalid use of incomplete typedef ‘Stack’ {aka ‘List’}
+  138 |       Node* n = stack->last;
+      |                      ^~
+sudoku.c:148:24: error: void value not ignored as it ought to be
+  148 |       while ((adj_node = popFront(adj_nodes)) != NULL) {
+      |                        ^
+Compilation failed
+9a02a76
