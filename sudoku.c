@@ -135,7 +135,7 @@ Node* DFS(Node* initial, int* cont){
   push(stack, initial);
     
   while (get_size(stack) != 0) {
-      Node* n = stack->first->data;
+      Node* n = stack->first;
     
       (*cont)++;
       
