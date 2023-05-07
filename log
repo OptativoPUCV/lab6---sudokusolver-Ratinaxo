@@ -16,3 +16,16 @@ Sun 07 May 2023 04:11:10 AM UTC:
  tests:  7|1
 total_score: 55/70
 becb331
+Sun 07 May 2023 04:33:49 AM UTC: 
+ sudoku.c | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:138:22: error: invalid use of incomplete typedef ‘Stack’ {aka ‘List’}
+  138 |       Node* n = stack->data;
+      |                      ^~
+sudoku.c:148:24: error: void value not ignored as it ought to be
+  148 |       while ((adj_node = popFront(adj_nodes)) != NULL) {
+      |                        ^
+Compilation failed
+282d572
