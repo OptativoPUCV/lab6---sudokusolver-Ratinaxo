@@ -182,3 +182,19 @@ sudoku.c:148:30: error: request for member ‘next’ in something not a structu
       |                              ^~
 Compilation failed
 736dcb3
+Sun 07 May 2023 05:06:50 AM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:144:34: error: invalid use of incomplete typedef ‘List’
+  144 |         Node* current = adj_nodes->first;
+      |                                  ^~
+sudoku.c:146:28: error: ‘Node’ has no member named ‘data’
+  146 |             push(S, current->data);
+      |                            ^~
+sudoku.c:148:30: error: ‘Node’ has no member named ‘next’
+  148 |             current = current->next;
+      |                              ^~
+Compilation failed
+97a4e02
