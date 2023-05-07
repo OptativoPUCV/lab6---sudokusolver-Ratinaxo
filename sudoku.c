@@ -136,7 +136,7 @@ Node* DFS(Node* initial, int* cont){
     
   while (get_size(stack) != 0) {
     Node* n = createNode();
-    n = stack->last->data;
+    n = stack->last;
     (*cont)++;
     
     if (is_final(n)) {
