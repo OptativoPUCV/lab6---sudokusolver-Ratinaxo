@@ -120,3 +120,22 @@ sudoku.c:148:22: error: void value not ignored as it ought to be
       |                      ^
 Compilation failed
 6252c10
+Sun 07 May 2023 04:42:55 AM UTC: 
+ sudoku.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:5:
+sudoku.c:9:2: error: conflicting types for ‘Node’; have ‘struct <anonymous>’
+    9 | }Node;
+      |  ^~~~
+sudoku.c:5:21: note: previous declaration of ‘Node’ with type ‘Node’
+    5 | typedef struct Node Node;
+      |                     ^~~~
+sudoku.c: In function ‘DFS’:
+sudoku.c:140:14: error: invalid use of incomplete typedef ‘Stack’ {aka ‘List’}
+  140 |     n = stack->last;
+      |              ^~
+sudoku.c:149:22: error: void value not ignored as it ought to be
+  149 |     while ((adj_node = popFront(adj_nodes)) != NULL) {
+      |                      ^
+Compilation failed
+4704fdd

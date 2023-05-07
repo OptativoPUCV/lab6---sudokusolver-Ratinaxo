@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "list.h"
 
+typedef struct Node Node;
 
 typedef struct{
    int sudo[9][9];
