@@ -131,27 +131,24 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
-  Stack* S = createStack();
-    push(S, initial);
-    while(!is_empty(S)){
-        Node* n = (Node*) top(S);
-        pop(S);
-        (*cont)++;
-        if(is_final(n)){
-            return n;
-        }
-        List* adj_nodes = get_adj_nodes(n);
-        node* current = adj_nodes->first;
-        while(current != NULL){
-            push(S, current->data);
-            node* temp = current;
-            current = current->next;
-            free(temp);
-        }
-        free(adj_nodes);
-        free(n);
+  Stack *stack = createStack();
+  push(stack, initial);
+  while(!is_empty(stack)){
+    Node* current = (Node*)top(stack);
+    pop(stack);
+    if(is_final(current))
+      return current;
+    List *adj_nodes = get_adj_nodes(current);
+    
+    while(!is_empty(adj_nodes)){
+      Node *nodoLadito = (Node*)top(adj_nodes);
+      pop(adj_nodes);
+      push(stack, nodoLadito);
     }
-    return NULL;
+    free(current);
+    free(adj_nodes);
+  }
+  return NULL;
 }
 
 
