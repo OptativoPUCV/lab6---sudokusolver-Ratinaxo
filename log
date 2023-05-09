@@ -204,3 +204,27 @@ Sun 07 May 2023 05:07:14 AM UTC:
  tests:  7|1
 total_score: 55/70
 d2f8978
+Tue 09 May 2023 12:54:58 AM UTC: 
+ sudoku.c | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:144:9: error: unknown type name ‘node’; did you mean ‘Node’?
+  144 |         node* current = adj_nodes->first;
+      |         ^~~~
+      |         Node
+sudoku.c:144:34: error: invalid use of incomplete typedef ‘List’
+  144 |         node* current = adj_nodes->first;
+      |                                  ^~
+sudoku.c:146:28: error: request for member ‘data’ in something not a structure or union
+  146 |             push(S, current->data);
+      |                            ^~
+sudoku.c:147:13: error: unknown type name ‘node’; did you mean ‘Node’?
+  147 |             node* temp = current;
+      |             ^~~~
+      |             Node
+sudoku.c:148:30: error: request for member ‘next’ in something not a structure or union
+  148 |             current = current->next;
+      |                              ^~
+Compilation failed
+0e51b48
